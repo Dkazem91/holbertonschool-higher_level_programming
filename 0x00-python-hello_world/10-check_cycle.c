@@ -1,6 +1,6 @@
-#include "lists.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include "lists.h"
 /**
  * check_cycle - checks for cycles in loop
  * @list: list to take in
@@ -12,10 +12,11 @@ int check_cycle(listint_t *list)
 
 	first = list;
 	second = list;
-	while (first != NULL && second->next != NULL && second != NULL)
+	while (first != NULL && second != NULL)
 	{
 		first = first->next;
-		second = second->next->next;
+		if (second->next)
+			second = second->next->next;
 
 		if (first == second)
 			return (1);
