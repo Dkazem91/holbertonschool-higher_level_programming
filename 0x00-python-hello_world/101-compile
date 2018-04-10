@@ -1,4 +1,4 @@
 #!/bin/bash
 python3 -m py_compile "$PYFILE"
-find __pycache__ -type f | xargs cp "$PYFILE"c
+cp __pycache__/* "$PYFILE"c
 rm -rf __pycache__
