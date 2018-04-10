@@ -6,6 +6,4 @@ def fizzbuzz():
             result += "Fizz"
         if(i % 5 == 0):
             result += "Buzz"
-        print("{}".format(result) or "{}".format(i), end='')
-        if(i is not 100):
-            print(" ", end='')
+        print("{} ".format(result) or "{} ".format(i), end='')
