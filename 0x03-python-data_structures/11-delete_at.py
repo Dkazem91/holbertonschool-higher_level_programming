@@ -1,7 +1,9 @@
 #!/user/bin/python3
 def delete_at(my_list=[], idx=0):
     if(idx < 0 or idx >= len(my_list)):
-        return(my_list.copy())
+        copyList = my_list.copy()
+        return(copyList)
     else:
         del my_list[idx]
-        return(my_list.copy())
+        copyList = my_list.copy()
+        return(copyList)
