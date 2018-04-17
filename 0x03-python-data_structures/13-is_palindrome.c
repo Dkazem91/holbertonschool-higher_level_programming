@@ -15,7 +15,7 @@ int is_palindrome(listint_t **head)
 	tmp = *head;
 	if ((*head) == NULL)
 		return (1);
-	while (tmp->next != NULL)
+	while (tmp != NULL)
 	{
 		len++;
 		tmp = tmp->next;
@@ -24,7 +24,7 @@ int is_palindrome(listint_t **head)
 		return (1);
 	Ns = malloc(sizeof(int) * len);
 	if(Ns == NULL)
-		return (0);
+		return (1);
 	tmp = *head;
 	while (tmp != NULL)
 	{
@@ -34,7 +34,7 @@ int is_palindrome(listint_t **head)
 	}
 	for (i = 0; i <= len / 2; i++)
 	{
-		if (Ns[i] != Ns[len - i])
+		if (Ns[i] != Ns[len - i - 1])
 		{
 			free(Ns);
 			return (0);
