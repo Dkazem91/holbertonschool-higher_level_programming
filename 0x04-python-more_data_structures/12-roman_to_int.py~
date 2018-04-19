@@ -1,0 +1,15 @@
+#!/usr/bin/local
+def roman_to_int(roman_string):
+    sum = 0
+    if(roman_string and isinstance(roman_string,str)):
+        Nums = {'M':1000,'L':50,'X':10,'V':5,'I':1}
+        aList = [Nums.get(x) for x in roman_string]
+        for idx,char in enumerate(aList):
+            if(idx < len(aList) - 1):
+                if aList[idx + 1] > char:
+                    sum -= char
+                else:
+                    sum += char
+            else:
+                sum += char
+    return(sum)
