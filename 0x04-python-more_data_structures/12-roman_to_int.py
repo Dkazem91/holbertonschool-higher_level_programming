@@ -1,4 +1,4 @@
-#!/usr/bin/local
+#!/usr/bin/python3
 def roman_to_int(roman_string):
     sum = 0
     if(roman_string and isinstance(roman_string, str)):
