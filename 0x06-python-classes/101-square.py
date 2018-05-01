@@ -63,6 +63,8 @@ class Square:
         prints a square of hashtags based on position and size
         """
     def __str__(self):
+        if(self.size == 0):
+            return ''
         newlines = '\n' * self.position[1]
         spaces = ' ' * self.position[0]
         hashes = "#" * self.size
