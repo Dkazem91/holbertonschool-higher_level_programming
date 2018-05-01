@@ -55,13 +55,10 @@ class Square:
         if(self.size == 0):
             print()
             return
-        if(self.position[1]):
-            print('' * self.position[1])
-        for x in range(self.size):
-            if(self.position[0]):
-                print(" " * self.position[0], end='')
-            print("#" * self.size, end='')
+        for x in range(self.position[1]):
             print()
+        for x in range(self.size):
+            print("{}{}".format(" " * self.position[0], "#" * self.size))
         """
         prints a square of hashtags based on position and size
         """
