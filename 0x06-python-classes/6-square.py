@@ -52,13 +52,15 @@ class Square:
         returns the area of the size of the square
         """
     def my_print(self):
+        if(self.size == 0):
+            print()
         if(self.position[1]):
             print('' * self.position[1])
         for x in range(self.size):
             if(self.position[0]):
                 print(" " * self.position[0], end='')
             print("#" * self.size, end='')
-        print()
+            print()
         """
         prints a square of hashtags based on position and size
         """
