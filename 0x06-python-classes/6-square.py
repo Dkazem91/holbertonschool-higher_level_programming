@@ -3,9 +3,9 @@ class Square:
     """
     creates a square object
     """
-    def __init__(self,size=0,position=(0,0)):
-        self.__size = size
-        self.__position = position
+    def __init__(self, size=0, position=(0, 0)):
+        self.size = size
+        self.position = position
         """
         initializes instance of a square
         Args:
@@ -25,8 +25,9 @@ class Square:
         gets position
         """
     @position.setter
-    def position(self,value):
-        if(type(value) is not tuple or len(value) is not 2 or value[0] < 0 or value[1] < 0):
+    def position(self, value):
+        if(type(value) is not tuple
+           or len(value) is not 2 or value[0] < 0 or value[1] < 0):
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
         """
@@ -55,8 +56,8 @@ class Square:
             print('' * self.position[1])
         for x in range(self.size):
             if(self.position[0]):
-                print(" " * self.position[0],end='')
-            print("#" * self.size,end='')
+                print(" " * self.position[0], end='')
+            print("#" * self.size, end='')
             print()
         """
         prints a square of hashtags based on position and size
