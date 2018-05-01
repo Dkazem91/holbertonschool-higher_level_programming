@@ -1,5 +1,11 @@
 #!/usr/bin/python3
+"""
+square class
+"""
+
+
 class Square:
+
     def __init__(self, size=0, position=(0, 0)):
         self.size = size
         self.position = position
@@ -32,6 +38,9 @@ class Square:
         """
         sets position
         position has to be a tuple of positive integers
+        Raise:
+            ValueError
+            TypeError
         """
     @size.setter
     def size(self, value):
