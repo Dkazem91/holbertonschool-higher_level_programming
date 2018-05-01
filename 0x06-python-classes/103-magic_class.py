@@ -26,6 +26,3 @@ class MagicClass:
         """
         gets circumference
         """
-if __name__ == "__main__":
-    import dis
-    dis.dis(MagicClass)
