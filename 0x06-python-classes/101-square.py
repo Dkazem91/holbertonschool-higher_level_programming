@@ -26,7 +26,8 @@ class Square:
         """
     @position.setter
     def position(self, value):
-        if(type(value) is not tuple or len(value) is not 2 or value[0] < 0 or value[1] < 0):
+        if(type(value) is not tuple or len(value) is not 2 or value[0] < 0 or
+           value[1] < 0):
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
         """
@@ -55,14 +56,14 @@ class Square:
             print('' * self.position[1])
         for x in range(self.size):
             if(self.position[0]):
-                print(" " * self.position[0],end='')
-            print("#" * self.size,end='')
+                print(" " * self.position[0], end='')
+            print("#" * self.size, end='')
             print()
         """
         prints a square of hashtags based on position and size
         """
     def __str__(self):
-        newlines='\n' * self.position[1]
+        newlines = '\n' * self.position[1]
         spaces = ' ' * self.position[0]
         hashes = "#" * self.size
         return newlines + '\n'.join(spaces + hashes for x in range(self.size))
