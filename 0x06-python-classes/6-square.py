@@ -58,7 +58,7 @@ class Square:
             if(self.position[0]):
                 print(" " * self.position[0], end='')
             print("#" * self.size, end='')
-            print()
+        print()
         """
         prints a square of hashtags based on position and size
         """
