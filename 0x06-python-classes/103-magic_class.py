@@ -4,6 +4,7 @@ import math class magic class
 """
 import math
 
+
 class MagicClass:
     """
     class magicclass initialized
