@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 class Square:
-    def __init__(self,size=0):
+
+    def __init__(self, size=0):
         self.__size = size
+
     @property
     def size(self):
         return self.__size
@@ -16,10 +18,11 @@ class Square:
 
     def area(self):
         return(self.__size**2)
+
     def my_print(self):
         if(self.size):
             for x in range(self.size):
-                print("#" * self.size,end='')
+                print("#" * self.size, end='')
                 print()
         else:
             print()
