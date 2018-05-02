@@ -1,0 +1,34 @@
+#2-matrix_divided.txt
+===============================
+ How to 2-matrix_divided.py
+===============================
+
+This library is very simple, since it only has one function called
+``matrix_divided()``.
+
+Numbers
+=======
+
+``matrix_divided()`` returns a new matrix of all elements
+ divided by a divider variable.
+
+all ints
+::
+    >>> matrix_divided = __import__("2-matrix_divided").matrix_divided
+    >>> matrix = [[1,2,3],[4,5,6]]
+    >>> matrix_divided(matrix, 3)
+    [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+ints and floats and negatives
+::
+    >>> matrix_divided = __import__("2-matrix_divided").matrix_divided
+    >>> matrix = [[1.5,2.0,3.0],[4.0,-5.0,-6]]
+    >>> matrix_divided(matrix, 3)
+    [[0.5, 0.67, 1.0], [1.33, -1.67, -2.0]]
+
+check empty list
+::
+    >>> matrix = [[],[]]
+    >>> matrix_divided(matrix,3)
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
