@@ -1,0 +1,20 @@
+#3-say_my_name.txt
+
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+>>> say_my_name("alan","alansworth")
+My name is alan alansworth
+
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+>>> say_my_name("alan")
+My name is alan 
+
+>>> say_my_name("a","b")
+My name is a b
+
+>>> say_my_name(["alan"],"b")
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+>>> say_my_name("balan",55)
+Traceback (most recent call last):
+TypeError: last_name must be a string

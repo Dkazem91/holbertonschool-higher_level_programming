@@ -6,7 +6,7 @@ def matrix_divided(matrix, div):
     if(not isinstance(matrix,list) or
        any(False in x for x in  [[isinstance(ele,(int,float)) for ele in row]
                                    for row in matrix]) or
-        0 in [len(listx) for listx in matrix]):
+        0 in [len(listx) for listx in matrix] or len(matrix) is 0):
         raise TypeError(
             'matrix must be a matrix (list of lists) of integers/floats')
     if(len(set([len(listx) for listx in matrix])) > 1):

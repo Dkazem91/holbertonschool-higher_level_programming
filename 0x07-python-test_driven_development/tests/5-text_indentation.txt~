@@ -1,0 +1,13 @@
+#5-text_indentation.txt
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+>>> text_indentation("hello. how are you?")
+hello.
+<BLANKLINE>
+how are you?
+<BLANKLINE>
+>>> text_indentation("hello. how are you I'm doing fine")
+hello.
+<BLANKLINE>
+how are you I'm doing fine
+>>> text_indentation("hello")
+hello

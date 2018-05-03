@@ -1,7 +1,9 @@
 #!/usr/bin/python3
-"""0-add_integer.py"""
+"""0-add_integer.py
+"""
 def add_integer(a, b=98):
     """Returns a + b
+
     """
     if not isinstance(a,(int,float)):
         raise TypeError("a must be an integer")
