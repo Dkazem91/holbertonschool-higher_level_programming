@@ -8,7 +8,6 @@
 >>> print("")
 <BLANKLINE>
 >>> print_square(0)
-<BLANKLINE>
 >>> print_square("hello")
 Traceback (most recent call last):
 TypeError: size must be an integer
