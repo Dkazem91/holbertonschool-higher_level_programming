@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """numpy multiply matrix"""
+
 import numpy
 
 
