@@ -11,6 +11,6 @@ hello.
 how are you I'm doing fine
 >>> text_indentation("hello")
 hello
->>> text_indent(123)
+>>> text_indentation(123)
 Traceback (most recent call last):
 TypeError: text must be a string
