@@ -18,13 +18,13 @@ Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
   File "/home/vagrant/Src/holbertonschool-higher_level_programming/0x07-python-test_driven_development/100-matrix_mul.py", line 8, in matrix_mul
     raise TypeError('m_a can\'t be empty')
-TypeError: m_a can't be empty
+ValueError: m_a can't be empty
 >>> print(matrix_mul([[1,2]],[]))
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
   File "/home/vagrant/Src/holbertonschool-higher_level_programming/0x07-python-test_driven_development/100-matrix_mul.py", line 10, in matrix_mul
     raise TypeError('m_b can\'t be empty')
-TypeError: m_b can't be empty
+ValueError: m_b can't be empty
 >>> print(matrix_mul([['a','b']],[[1,2]]))
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
