@@ -50,7 +50,8 @@ Traceback (most recent call last):
     raise TypeError('each row of m_b must should be of the same size')
 TypeError: each row of m_b must should be of the same size
 >>> print(matrix_mul([[1,2]],[[1,2,3],[1,2,3]]))
-[[3, 6, 9]]
+Traceback (most recent call last):
+ValueError: m_a and m_b can't be multiplied
 >>> print(matrix_mul([[1,2,3]]))
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
@@ -59,3 +60,9 @@ TypeError: matrix_mul() missing 1 required positional argument: 'm_b'
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 TypeError: matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
+>>> print(matrix_mul([[1,2]],[[1,2,3],[1,2,3]]))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/vagrant/Src/holbertonschool-higher_level_programming/0x07-python-test_driven_development/100-matrix_mul.py", line 26, in matrix_mul
+    raise ValueError("m_a and m_b can't be multiplied")
+ValueError: m_a and m_b can't be multiplied

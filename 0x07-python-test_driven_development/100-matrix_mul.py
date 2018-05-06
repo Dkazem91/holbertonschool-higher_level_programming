@@ -22,7 +22,7 @@ def matrix_mul(m_a, m_b):
         raise TypeError('each row of m_a must should be of the same size')
     if len(set(len(listx) for listx in m_b)) > 1:
         raise TypeError('each row of m_b must should be of the same size')
-    if len(m_a[0]) != len(m_b):
+    if len(m_a) != len([list(x) for x in zip(*m_b)]):
         raise ValueError("m_a and m_b can't be multiplied")
     return([[sum(a*b for a, b in
                  zip(colA, colB)) for colB in zip(*m_b)] for colA in m_a])
