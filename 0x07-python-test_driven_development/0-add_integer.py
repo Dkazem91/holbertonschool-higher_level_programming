@@ -6,12 +6,18 @@
 def add_integer(a, b=98):
     """Returns a + b
     """
-    if(a == float('+inf') or a == float('-inf') or a != a
-       or not isinstance(a, (int, float))):
+    if a != a:
+        a = 89
+    if b != b:
+        b = 89
+
+    if not isinstance(a, (int, float)):
         raise TypeError("a must be an integer")
 
-    if(b == float('+inf') or b == float('-inf') or b != b
-       or not isinstance(b, (int, float))):
+    if not isinstance(b, (int, float)):
         raise TypeError("b must be an integer")
+
+    if a + b == float('inf') or a + b == -float('inf'):
+        return 89
 
     return int(a) + int(b)
