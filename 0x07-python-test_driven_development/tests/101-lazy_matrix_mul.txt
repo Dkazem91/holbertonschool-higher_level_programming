@@ -1,0 +1,67 @@
+>>> matrix_mul = __import__('100-matrix_mul').matrix_mul
+>>> print(matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]]))
+[[7, 10], [15, 22]]
+>>> print(matrix_mul("string",[[1,2]]))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/vagrant/Src/holbertonschool-higher_level_programming/0x07-python-test_driven_development/100-matrix_mul.py", line 4, in matrix_mul
+    raise TypeError('m_a must be a list')
+TypeError: m_a must be a list
+>>> print(matrix_mul([[1,2]],"string"))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/vagrant/Src/holbertonschool-higher_level_programming/0x07-python-test_driven_development/100-matrix_mul.py", line 6, in matrix_mul
+    raise TypeError('m_b must be a list')
+TypeError: m_b must be a list
+>>> print(matrix_mul([],[[1,2]]))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/vagrant/Src/holbertonschool-higher_level_programming/0x07-python-test_driven_development/100-matrix_mul.py", line 8, in matrix_mul
+    raise TypeError('m_a can\'t be empty')
+ValueError: m_a can't be empty
+>>> print(matrix_mul([[1,2]],[]))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/vagrant/Src/holbertonschool-higher_level_programming/0x07-python-test_driven_development/100-matrix_mul.py", line 10, in matrix_mul
+    raise TypeError('m_b can\'t be empty')
+ValueError: m_b can't be empty
+>>> print(matrix_mul([['a','b']],[[1,2]]))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/vagrant/Src/holbertonschool-higher_level_programming/0x07-python-test_driven_development/100-matrix_mul.py", line 13, in matrix_mul
+    raise TypeError('m_a should contain only integers or floats')
+TypeError: m_a should contain only integers or floats
+>>> print(matrix_mul([[1,2]],[['a','b']]))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/vagrant/Src/holbertonschool-higher_level_programming/0x07-python-test_driven_development/100-matrix_mul.py", line 16, in matrix_mul
+    raise TypeError('m_b should contain only integers or floats')
+TypeError: m_b should contain only integers or floats
+>>> print(matrix_mul([[1,2],[1]],[[1,2]]))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/vagrant/Src/holbertonschool-higher_level_programming/0x07-python-test_driven_development/100-matrix_mul.py", line 18, in matrix_mul
+    raise TypeError('each row of m_a must should be of the same size')
+TypeError: each row of m_a must should be of the same size
+>>> print(matrix_mul([[1,2]],[[1,2],[1]]))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/vagrant/Src/holbertonschool-higher_level_programming/0x07-python-test_driven_development/100-matrix_mul.py", line 20, in matrix_mul
+    raise TypeError('each row of m_b must should be of the same size')
+TypeError: each row of m_b must should be of the same size
+>>> print(matrix_mul([[1,2]],[[1,2,3],[1,2,3]]))
+[[3, 6, 9]]
+>>> print(matrix_mul([[1,2,3]]))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: matrix_mul() missing 1 required positional argument: 'm_b'
+>>> print(matrix_mul())
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
+>>> print(matrix_mul([[1,2,3]],[[1,2,3],[1,2,3]]))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/vagrant/Src/holbertonschool-higher_level_programming/0x07-python-test_driven_development/100-matrix_mul.py", line 26, in matrix_mul
+    raise ValueError("m_a and m_b can't be multiplied")
+ValueError: m_a and m_b can't be multiplied
