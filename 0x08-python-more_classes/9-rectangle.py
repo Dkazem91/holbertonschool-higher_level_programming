@@ -21,6 +21,9 @@ class Rectangle:
 
     @classmethod
     def square(cls, size=0):
+        """makes a square
+
+        """
         return cls(size, size)
 
     @property
@@ -91,8 +94,8 @@ class Rectangle:
         """
         if not self.perimeter:
             return ""
-        return('\n'.join("{}".format(self.print_symbol)
-                         * self.width for x in range(self.height)))
+        return('\n'.join("{}".format(
+            self.print_symbol) * self.width for x in range(self.height)))
 
     def __repr__(self):
         """modifies repr object
