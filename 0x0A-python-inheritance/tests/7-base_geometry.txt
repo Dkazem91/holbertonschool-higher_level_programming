@@ -1,0 +1,40 @@
+#7-base_geometry.txt
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>> string = "property"
+>>> bg = BaseGeometry()
+>>> bg.integer_validator(string,12)
+>>> bg.integer_validator(string,89)
+>>> bg.integer_validator(string, -2)
+Traceback (most recent call last):
+ValueError: property must be greater than 0
+>>> bg.integer_validator(string, 0)
+Traceback (most recent call last):
+ValueError: property must be greater than 0
+>>> bg.integer_validator(string, "string")
+Traceback (most recent call last):
+TypeError: property must be an integer
+>>> bg.integer_validator(string, [])
+Traceback (most recent call last):
+TypeError: property must be an integer
+>>> bg.integer_validator(string, [1])
+Traceback (most recent call last):
+TypeError: property must be an integer
+>>> bg.integer_validator(string, (1))
+>>> bg.integer_validator(string, (1,2))
+Traceback (most recent call last):
+TypeError: property must be an integer
+>>> bg.integer_validator(string, {})
+Traceback (most recent call last):
+TypeError: property must be an integer
+>>> bg.integer_validator(string, {1:2})
+Traceback (most recent call last):
+TypeError: property must be an integer
+>>> bg.integer_validator(string,)
+Traceback (most recent call last):
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+>>> bg.integer_validator()
+Traceback (most recent call last):
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+>>> bg.integer_validator(string,1.0)
+Traceback (most recent call last):
+TypeError: property must be an integer
