@@ -45,8 +45,9 @@ class Square(Rectangle):
 
     def __init__(self, size):
         """initializes rectangle"""
-        Rectangle.__init__(self, size, size)
+        self.integer_validator("size", size)
         self.__size = size
+        super().__init__(size, size)
 
     def __str__(self):
         """returns string of square"""
