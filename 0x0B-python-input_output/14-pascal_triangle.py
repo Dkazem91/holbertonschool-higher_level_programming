@@ -4,13 +4,12 @@
 
 def pascal_triangle(n):
     """does it"""
-    bullshit = []
-    start = []
+    Triangle = []
+    prevN = []
     for i in range(n):
-        adder = [1] + [sum(start[x:x + 2]) for x in range(len(start) - 1)]
-        newList = adder
+        atN = [1] + [sum(prevN[ele:ele + 2]) for ele in range(len(prevN) - 1)]
         if i > 0:
-            newList = adder + [1]
-        bullshit.append(newList)
-        start = newList
-    return bullshit
+            atN = atN + [1]
+        Triangle.append(atN)
+        prevN = atN
+    return Triangle
