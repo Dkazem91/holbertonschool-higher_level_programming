@@ -20,4 +20,5 @@ class Student:
 
     def reload_from_json(self, json):
         """replaces allattributes with json"""
-        self.__dict__ = json
+        if(json):
+            self.__dict__ = json
