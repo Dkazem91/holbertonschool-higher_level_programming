@@ -26,11 +26,26 @@ class Base:
         return json.loads(json_string)
 
     @classmethod
+    def create(cls, **dictionary):
+        """makes instance"""
+        newCreate = cls(1,1)
+        newCreate.update(**dictionary)
+        return newCreate
+
+    @classmethod
     def save_to_file(cls, list_objs):
         """save to file"""
-        if list_objs is None:
-            jsons = []
-        else:
-            jsons = [cls.to_json_string(x.to_dictionary()) for x in list_objs]
-        with open(cls.__name__+'.json', 'w') as f:
-            f.write(str(jsons))
+        try:
+            jsons = cls.to_json_string([x.to_dictionary() for x in list_objs])
+        except:
+            jsons = '[]'
+        with open(cls.__name__+'.json', 'w', encoding='utf-8') as f:
+            f.write(jsons)
+    @classmethod
+    def load_from_file(cls):
+        try:
+            with open(cls.__name__ + '.json', 'r', encoding='utf-8') as f:
+                list_dicts = cls.from_json_string(f.read())
+            return [cls.create(**dic) for dic in list_dicts]
+        except IOError:
+            return []
