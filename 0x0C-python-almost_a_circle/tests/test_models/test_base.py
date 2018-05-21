@@ -2,7 +2,7 @@
 import unittest
 from models.base import Base
 from models.rectangle import Rectangle
-class TestMaxInteger(unittest.TestCase):
+class TestBase(unittest.TestCase):
 
     def test_one(self):
         b1 = Base()
@@ -17,12 +17,13 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(b5.id, 4)
 
     def test_two(self):
-        r1 = Rectangle(10, 2)
-        r2 = Rectangle(2, 10)
-        r3 = Rectangle(10, 2, 0, 0, 12)
-        self.assertEqual(r1.id, 1)
-        self.assertEqual(r2.id, 2)
-        self.assertEqual(r3.id, 12)
+        r1 = Rectangle(10, 7, 2, 8)
+        dictionary = r1.to_dictionary()
+        self.assertDictEqual(dictionary,
+                          {'x': 2, 'width': 10,
+                           'id': 5, 'height': 7, 'y': 8})
+        json_dictionary = Base.to_json_string([dictionary])
+        self.assertEqual(json_dictionary, json_dictionary)
 
 if __name__ == '__main__':
     unittest.main()
