@@ -4,11 +4,13 @@ from models.rectangle import Rectangle
 from models.base import Base
 import sys
 from io import StringIO
+"""tests rectangle"""
 
 
 class TestRectangle(unittest.TestCase):
 
     def test_ids(self):
+        """tests ids"""
         Base._Base__nb_objects = 0
         r1 = Rectangle(10, 2)
         r2 = Rectangle(2, 10)
@@ -20,6 +22,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r3.id, "a")
 
     def test_attr_errors(self):
+        """tests errors"""
         Base._Base__nb_objects = 0
         with self.assertRaises(TypeError, msg="height must be an integer"):
             r1 = Rectangle(10, "2")
@@ -37,6 +40,7 @@ class TestRectangle(unittest.TestCase):
             r4 = Rectangle(10, 2, 3, -1)
 
     def test_areas(self):
+        """tests areas"""
         Base._Base__nb_objects = 0
         r1 = Rectangle(3, 2)
         self.assertEqual(r1.area(), 6)
@@ -48,6 +52,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r1.area(), 56)
 
     def test_display(self):
+        """tests display"""
         Base._Base__nb_objects = 0
         old_stdout = sys.stdout
         sys.stdout = mystdout = StringIO()
@@ -62,6 +67,7 @@ class TestRectangle(unittest.TestCase):
         sys.stdout = old_stdout
 
     def test_str(self):
+        """tests strings"""
         Base._Base__nb_objects = 0
         r1 = Rectangle(4, 6, 2, 1, 12)
         self.assertEqual(r1.__str__(), "[Rectangle] (12) 2/1 - 4/6")
@@ -71,6 +77,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r1.__str__(), "[Rectangle] (2) 0/0 - 1/1")
 
     def test_update(self):
+        """tests update"""
         Base._Base__nb_objects = 0
         r1 = Rectangle(10, 10, 10, 10)
         r1_dictionary = r1.to_dictionary()
@@ -89,6 +96,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r2.__str__(), "[Rectangle] (1) 10/10 - 10/10")
 
     def test_dictionary(self):
+        """tests dictionary"""
         Base._Base__nb_objects = 0
         r1 = Rectangle(10, 2, 1, 9)
         r1_dictionary = r1.to_dictionary()
@@ -100,6 +108,7 @@ class TestRectangle(unittest.TestCase):
             'x': 0, 'y': 0, 'width': 1, 'height': 1, 'id': 2})
 
     def test_RectCreate(self):
+        """tests create"""
         Base._Base__nb_objects = 0
         s1 = Rectangle(10, 2)
         s1_dictionary = s1.to_dictionary()
