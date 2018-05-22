@@ -29,10 +29,11 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """makes instance"""
-        newCreate = cls(1, 1)
-        if dictionary and type(dictionary) is dict:
-            newCreate.update(**dictionary)
-        return newCreate
+        if cls.__name__ is 'Square' or cls.__name__ is 'Rectangle':
+            newcreate = cls(1, 1)
+            if dictionary and type(dictionary) is dict:
+                newcreate.update(**dictionary)
+                return newcreate
 
     @classmethod
     def save_to_file(cls, list_objs):
