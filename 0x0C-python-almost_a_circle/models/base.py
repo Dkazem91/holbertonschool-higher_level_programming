@@ -30,7 +30,8 @@ class Base:
     def create(cls, **dictionary):
         """makes instance"""
         newCreate = cls(1, 1)
-        newCreate.update(**dictionary)
+        if dictionary and type(dictionary) is dict:
+            newCreate.update(**dictionary)
         return newCreate
 
     @classmethod
