@@ -97,5 +97,13 @@ class TestSquare(unittest.TestCase):
         self.assertDictEqual(r1_dictionary, {
             'x': 0, 'y': 0, 'size': 1, 'id': 1})
 
+    def test_SquareCreate(self):
+        Base._Base__nb_objects = 0
+        s1 = Square(10)
+        s1_dictionary = s1.to_dictionary()
+        s2 = Square.create(**s1_dictionary)
+        self.assertFalse(s1 is s2)
+        self.assertFalse(s1 == s2)
+
 if __name__ == '__main__':
     unittest.main()

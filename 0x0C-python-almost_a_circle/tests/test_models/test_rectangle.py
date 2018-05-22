@@ -97,5 +97,12 @@ class TestRectangle(unittest.TestCase):
         self.assertDictEqual(r1_dictionary, {
             'x': 0, 'y': 0, 'width': 1, 'height': 1, 'id': 2})
 
+    def test_RectCreate(self):
+        Base._Base__nb_objects = 0
+        s1 = Rectangle(10, 2)
+        s1_dictionary = s1.to_dictionary()
+        s2 = Rectangle.create(**s1_dictionary)
+        self.assertFalse(s1 is s2)
+        self.assertFalse(s1 == s2)
 if __name__ == '__main__':
     unittest.main()
