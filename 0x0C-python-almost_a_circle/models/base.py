@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """class base"""
 import json
+import os.path
 
 
 class Base:
@@ -23,12 +24,12 @@ class Base:
     @staticmethod
     def from_json_string(json_string):
         """returns list of jsons"""
-        return json.loads(json_string)
+        return json.loads(json_string or "[]")
 
     @classmethod
     def create(cls, **dictionary):
         """makes instance"""
-        newCreate = cls(1,1)
+        newCreate = cls(1, 1)
         newCreate.update(**dictionary)
         return newCreate
 
@@ -41,11 +42,12 @@ class Base:
             jsons = '[]'
         with open(cls.__name__+'.json', 'w', encoding='utf-8') as f:
             f.write(jsons)
+
     @classmethod
     def load_from_file(cls):
-        try:
+        if not os.path.isfile(cls.__name__ + '.json'):
+            return []
+        else:
             with open(cls.__name__ + '.json', 'r', encoding='utf-8') as f:
                 list_dicts = cls.from_json_string(f.read())
             return [cls.create(**dic) for dic in list_dicts]
-        except IOError:
-            return []

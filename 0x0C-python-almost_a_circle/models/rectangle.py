@@ -29,7 +29,8 @@ class Rectangle(Base):
                 i += 1
         elif kwargs:
             for key, value in kwargs.items():
-                setattr(self, key, value)
+                if hasattr(self, key):
+                    setattr(self, key, value)
 
     def validator(self, name, value):
         """validates the shit out of it"""

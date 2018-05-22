@@ -4,7 +4,8 @@ from models.base import Base
 from models.rectangle import Rectangle
 class TestBase(unittest.TestCase):
 
-    def test_one(self):
+    def test_id(self):
+        Base._Base__nb_objects = 0
         b1 = Base()
         b2 = Base()
         b3 = Base()
@@ -16,12 +17,13 @@ class TestBase(unittest.TestCase):
         self.assertEqual(b4.id, 12)
         self.assertEqual(b5.id, 4)
 
-    def test_two(self):
+    def test_dictionary(self):
+        Base._Base__nb_objects = 0
         r1 = Rectangle(10, 7, 2, 8)
         dictionary = r1.to_dictionary()
         self.assertDictEqual(dictionary,
                           {'x': 2, 'width': 10,
-                           'id': 5, 'height': 7, 'y': 8})
+                           'id': 1, 'height': 7, 'y': 8})
         json_dictionary = Base.to_json_string([dictionary])
         self.assertEqual(json_dictionary, json_dictionary)
 
