@@ -55,3 +55,33 @@ class Base:
             with open(cls.__name__ + '.json', 'r', encoding='utf-8') as f:
                 list_dicts = cls.from_json_string(f.read())
             return [cls.create(**dic) for dic in list_dicts]
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        import csv
+        try:
+            csvs = [x.to_dictionary() for x in list_objs]
+        except:
+            csvs = '[]'
+        keys = csvs[0].keys()
+        with open(cls.__name__ + '.csv', 'w') as f:
+            writer = csv.DictWriter(f, keys)
+            writer.writeheader()
+            writer.writerows(csvs)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        import csv
+        if not os.path.isfile(cls.__name__ + '.csv'):
+            return []
+        else:
+            with open(cls.__name__ + '.csv', 'r') as f:
+                reader = csv.DictReader(f)
+                csvs = [row for row in reader]
+                for row in csvs:
+                    for key, val in row.items():
+                        try:
+                            row[key] = int(val)
+                        except:
+                            pass
+            return [cls.create(**dic) for dic in csvs]
