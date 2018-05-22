@@ -4,6 +4,8 @@ from models.rectangle import Rectangle
 from models.base import Base
 import sys
 from io import StringIO
+
+
 class TestRectangle(unittest.TestCase):
 
     def test_ids(self):
@@ -29,7 +31,7 @@ class TestRectangle(unittest.TestCase):
             r2 = Rectangle(10, 2)
             r2.width = -10
         with self.assertRaises(TypeError, msg="x must be an integer"):
-            r3 = Rectangle(10,2)
+            r3 = Rectangle(10, 2)
             r3.x = {}
         with self.assertRaises(ValueError, msg="y must be >=0"):
             r4 = Rectangle(10, 2, 3, -1)
@@ -65,7 +67,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r1.__str__(), "[Rectangle] (12) 2/1 - 4/6")
         r2 = Rectangle(5, 5, 1)
         self.assertEqual(r2.__str__(), "[Rectangle] (1) 1/0 - 5/5")
-        r1 = Rectangle(1,1)
+        r1 = Rectangle(1, 1)
         self.assertEqual(r1.__str__(), "[Rectangle] (2) 0/0 - 1/1")
 
     def test_update(self):
@@ -82,7 +84,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r1.__str__(), "[Rectangle] (89) 1/3 - 4/2")
         with self.assertRaises(ValueError, msg="x must be >=0"):
             r1.update(y=1, width=2, x=-3, id=89)
-        r2 = Rectangle(2,2)
+        r2 = Rectangle(2, 2)
         r2.update(**r1_dictionary)
         self.assertEqual(r2.__str__(), "[Rectangle] (1) 10/10 - 10/10")
 
@@ -92,7 +94,7 @@ class TestRectangle(unittest.TestCase):
         r1_dictionary = r1.to_dictionary()
         self.assertDictEqual(r1_dictionary, {
             'x': 1, 'y': 9, 'width': 10, 'height': 2, 'id': 1})
-        r1 = Rectangle(1,1)
+        r1 = Rectangle(1, 1)
         r1_dictionary = r1.to_dictionary()
         self.assertDictEqual(r1_dictionary, {
             'x': 0, 'y': 0, 'width': 1, 'height': 1, 'id': 2})
@@ -104,5 +106,7 @@ class TestRectangle(unittest.TestCase):
         s2 = Rectangle.create(**s1_dictionary)
         self.assertFalse(s1 is s2)
         self.assertFalse(s1 == s2)
+
+
 if __name__ == '__main__':
     unittest.main()

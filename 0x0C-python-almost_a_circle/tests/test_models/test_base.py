@@ -4,6 +4,8 @@ import os.path
 from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
+
+
 class TestBase(unittest.TestCase):
 
     def test_id(self):
@@ -24,8 +26,8 @@ class TestBase(unittest.TestCase):
         r1 = Rectangle(10, 7, 2, 8)
         dictionary = r1.to_dictionary()
         self.assertDictEqual(dictionary,
-                          {'x': 2, 'width': 10,
-                           'id': 1, 'height': 7, 'y': 8})
+                             {'x': 2, 'width': 10,
+                              'id': 1, 'height': 7, 'y': 8})
         json_dictionary = Base.to_json_string([dictionary])
         self.assertEqual(json_dictionary, json_dictionary)
         self.assertEqual(Base.to_json_string(None), "[]")
@@ -74,7 +76,7 @@ class TestBase(unittest.TestCase):
         Rectangle.save_to_file(list_rectangles_input)
         list_rectangles_output = Rectangle.load_from_file()
         for thing in list_rectangles_output:
-           self.assertTrue(type(thing) is Rectangle)
+            self.assertTrue(type(thing) is Rectangle)
         s1 = Square(5)
         s2 = Square(7, 9, 1)
         list_squares_input = [s1, s2]
