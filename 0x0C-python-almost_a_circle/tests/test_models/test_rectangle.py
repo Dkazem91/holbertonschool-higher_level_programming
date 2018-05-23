@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+import pep8
 import unittest
 from models.rectangle import Rectangle
 from models.base import Base
@@ -8,6 +9,11 @@ from io import StringIO
 
 
 class TestRectangle(unittest.TestCase):
+
+    def test_pep8(self):
+        style = pep8.StyleGuide(quiet=True)
+        p = style.check_files(['models/rectangle.py','models/base.py','models/square.py'])
+        self.assertEqual(p.total_errors, 0, "fix pep8")
 
     def test_ids(self):
         """tests ids"""
