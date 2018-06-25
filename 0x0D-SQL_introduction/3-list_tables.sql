@@ -1,2 +1,2 @@
-/*lists tables*/
+-- lists tables
 SHOW TABLES;

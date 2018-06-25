@@ -1,4 +1,4 @@
-/*creates and populates table*/
+-- creates and populates table
 CREATE TABLE IF NOT EXISTS second_table (
        id INT AUTO_INCREMENT,
        name VARCHAR(256),
