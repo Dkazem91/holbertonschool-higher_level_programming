@@ -1,0 +1,2 @@
+INSERT INTO second_table
+VALUES (NULL,NULL, 2), (NULL,NULL, 3);
