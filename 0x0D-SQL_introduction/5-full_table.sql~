@@ -1,0 +1,1 @@
+SHOW IF NOT EXISTS CREATE TABLE first_table;
