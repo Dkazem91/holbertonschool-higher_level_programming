@@ -1,1 +1,2 @@
+/*lists tables*/
 SHOW TABLES;
