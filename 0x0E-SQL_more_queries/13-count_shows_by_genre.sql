@@ -1,5 +1,5 @@
 -- genre id by show
-SELECT tgs.name, COUNT(tg.genre_id) AS number_shows
+SELECT tgs.name AS genre, COUNT(tg.genre_id) AS number_shows
 FROM tv_shows AS ts
 LEFT JOIN tv_show_genres AS tg
 ON ts.id = tg.show_id
