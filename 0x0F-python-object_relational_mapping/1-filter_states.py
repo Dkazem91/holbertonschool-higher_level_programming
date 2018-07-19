@@ -12,7 +12,7 @@ def main(args):
                          db=args[3])
     cur = db.cursor()
     cur.execute(
-        "SELECT * FROM states WHERE name REGEXP '^N.*' ORDER BY id ASC")
+        "SELECT * FROM states WHERE name like binary 'N%' ORDER BY id ASC")
     states = cur.fetchall()
     for state in states:
         print(state)
