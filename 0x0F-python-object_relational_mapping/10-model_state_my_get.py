@@ -12,7 +12,7 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
     state = session.query(State).filter(
-        State.name == "%s" % (sys.argv[4],)).first()
+        State.name.contains("%s" % (sys.argv[4],))).first()
     try:
         print("{}".format(state.id))
     except:
