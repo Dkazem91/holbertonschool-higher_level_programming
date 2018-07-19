@@ -15,7 +15,7 @@ def main(args):
             c JOIN states s ON s.id=c.state_id\
             WHERE s.name=%s ORDER BY c.id", (args[4],))
     states = cur.fetchall()
-    print(", ".join(map(lambda x: "%s" % x,states)))
+    print(", ".join(map(lambda x: "%s" % x, states)))
 
 
 if __name__ == "__main__":
