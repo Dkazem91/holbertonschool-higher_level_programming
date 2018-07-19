@@ -2,6 +2,7 @@
 # sql alchemy awesome
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import relationship
 
 Base = declarative_base()
 
@@ -12,8 +13,4 @@ class State(Base):
 
     id = Column(Integer, primary_key=True, nullable=False)
     name = Column(String(128), nullable=False)
-
-
-def __repr__(self):
-    # reaper
-    return "<States(id='%s', name='%s')>" % (self.id, self.name)
+    city = relationship("City", back_populates="state")
