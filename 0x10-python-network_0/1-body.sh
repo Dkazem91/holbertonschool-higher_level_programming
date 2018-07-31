@@ -1,3 +1,3 @@
 #!/bin/bash
 #curls to end
-curl -sL $1
+curl -sL "$1"
