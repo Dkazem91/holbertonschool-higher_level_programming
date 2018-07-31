@@ -1,3 +1,3 @@
 #!/bin/bash
 #options
-curl -sX OPTIONS "$1"
+curl -sI "$1" | grep -i Allow | cut -d ' ' -f2-
