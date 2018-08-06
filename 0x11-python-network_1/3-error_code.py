@@ -11,4 +11,4 @@ if __name__ == "__main__":
             thisPage = response.read().decode('utf-8')
             print(thisPage)
     except urllib.error.URLError as e:
-        print(e.reason)
+        print("Error code: {}".format(e.code))
