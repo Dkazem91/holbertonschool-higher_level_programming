@@ -4,7 +4,7 @@ import requests
 from sys import argv
 
 if __name__ == "__main__":
-    if argv[1]:
+    if len(argv):
         qVar = argv[1]
     else:
         qVar = ""
