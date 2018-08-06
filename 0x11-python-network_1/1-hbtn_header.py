@@ -3,6 +3,6 @@
 import urllib.request
 import sys
 
-with urllib.request.urlopen("https://intranet.hbtn.io/status") as response:
+with urllib.request.urlopen(sys.argv[1]) as response:
     content = response.info()
     print(content.get('X-Request-Id'))
