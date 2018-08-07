@@ -20,5 +20,4 @@ if __name__ == "__main__":
     print("Number of results: {}".format(section.get('count')))
     for dik in section.get('results'):
         print(dik.get('name'))
-    if section.get('next'):
-        paginate(section.get('next'))
+    paginate(section.get('next'))
