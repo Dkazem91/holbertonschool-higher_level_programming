@@ -10,8 +10,7 @@ def paginate(address):
     r = requests.get(address).json()
     for dik in r.get('results'):
         print(dik.get('name'))
-    if r.get('next'):
-        return paginate(r.get('next'))
+    return paginate(r.get('next'))
 
 
 if __name__ == "__main__":
