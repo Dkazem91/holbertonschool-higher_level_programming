@@ -1,8 +1,7 @@
 #!/usr/bin/node
-exports.callMeMoby = function call (a, b) {
-  if (a) {
-    b();
-    return call(a - 1, b);
+exports.callMeMoby = function call (x, theFunction) {
+  if (x) {
+    theFunction();
+    return call(x - 1, theFunction);
   }
-  return;
 };
