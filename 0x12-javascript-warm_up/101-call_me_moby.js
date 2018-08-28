@@ -4,4 +4,5 @@ exports.callMeMoby = function call (a, b) {
     b();
     return call(a - 1, b);
   }
+  return;
 };
