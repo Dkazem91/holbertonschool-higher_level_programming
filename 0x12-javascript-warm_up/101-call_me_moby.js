@@ -1,3 +1,4 @@
+#!/usr/bin/node
 exports.callMeMoby = function call (a, b) {
   if (a) {
     b();
