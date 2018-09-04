@@ -20,10 +20,7 @@ class Square extends Rectangle {
   constructor (size) {
     super(size, size);
   }
-  charPrint (c) {
-    if (c === undefined) {
-      c = 'X';
-    }
+  charPrint (c='X') {
     for (let i = 0; i < this.height; i++) {
       console.log(c.repeat(this.width));
     }
