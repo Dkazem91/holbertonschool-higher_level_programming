@@ -1,10 +1,18 @@
 #!/usr/bin/node
 let request = require('request');
-let address = 'https://swapi.co/api/people/?search=Wedge Antilles';
+let address = process.argv[2];
+let achil = 'https://swapi.co/api/people/18/';
 request(address, function (error, response, body) {
   if (error) {
     console.log(error);
   } else {
-    console.log(JSON.parse(body)['results'][0]['films'].length);
+    let results = JSON.parse(body)['results'];
+    let count = 0;
+    for (let i in results) {
+      if (results[i]['characters'].indexOf(achil) >= 0) {
+        count += 1;
+      }
+    }
+    console.log(count);
   }
 });
