@@ -8,8 +8,10 @@ request(address, function (error, response, body) {
   } else {
     let results = {};
     for (let td of JSON.parse(body)) {
-      if (results[td['userId']] === undefined) { results[td['userId']] = 0; }
-      if (td.completed) { results[td['userId']] += 1; }
+      if (td.completed) {
+        if (results[td['userId']] === undefined) { results[td['userId']] = 0; }
+        results[td['userId']] += 1;
+      }
     }
     console.log(results);
   }
