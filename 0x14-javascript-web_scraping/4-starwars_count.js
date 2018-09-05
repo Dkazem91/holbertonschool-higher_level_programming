@@ -10,7 +10,9 @@ request(address, function (error, response, body) {
     let results = JSON.parse(body).results;
     let count = 0;
     for (let i in results) {
-      if (results[i]['characters'].indexOf(achil) >= 0) { count += 1; }
+      for (let chr of results[i].characters) {
+        if (chr === achil) { count += 1; }
+      }
     }
     console.log(count);
   }
