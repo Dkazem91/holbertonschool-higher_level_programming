@@ -9,15 +9,12 @@ request(address, function (error, response, body) {
     let results = JSON.parse(body).characters;
     let promises = [];
     for (let i of results) {
-      let thing = new Promise(function (resolve, reject) {
+      promises.push(new Promise(function (resolve, reject) {
         request(i, (e, r, b) => resolve(JSON.parse(b)['name']));
-      });
-      promises.push(thing);
+      }));
     }
     Promise.all(promises).then((a) => {
-      for (let i of a) {
-        console.log(i);
-      }
+      for (let i of a) { console.log(i); }
     });
   }
 });
